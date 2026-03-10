@@ -7,6 +7,8 @@ A Python &amp; SQL toolkit to audit data quality and operational readiness for p
 
 **"AI doesn't scale on demos; it scales on fundamentals."**
 
+In an enterprise environment, Data Strategy is the bridge between a messy database and a reliable AI. If you don't have a strategy for Data Integrity, your AI is just a very expensive way to generate confident mistakes.
+
 Let's be real: Most AI projects are great in a slide deck but fall apart in production. Why? Because the data foundation is shaky. This project is a toolkit built with **Python, SQL, and PowerShell** to handle the unglamorous work—data quality, governance, and workflow integration—that actually makes AI work at scale.
 
 ---
