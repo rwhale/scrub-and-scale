@@ -1,88 +1,813 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scrub-and-Scale | Data Strategy</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrub &amp; Scale — AI Data Readiness | Aerospace &amp; Defense</title>
+  <meta name="description" content="A live demonstration for program leadership — why data quality is the prerequisite for enterprise AI in Aerospace &amp; Defense.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-zinc-950 text-zinc-400 font-sans">
+<body>
 
-    <header class="py-24 px-6 border-b border-zinc-900">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-5xl font-bold text-white mb-6">Scrub-and-Scale</h1>
-            <p class="text-xl text-zinc-500 italic">"AI doesn't scale on demos; it scales on fundamentals."</p>
-        </div>
-    </header>
+<!-- ============================================================
+     CLASSIFICATION BANNER
+     ============================================================ -->
+<div id="class-banner">
+  <div class="ticker-wrap">
+    <div class="ticker-content"></div>
+  </div>
+</div>
 
-    <section class="max-w-4xl mx-auto py-20 px-6">
-        <h2 class="text-2xl font-semibold text-white mb-6">The Strategic Foundation</h2>
-        <p class="text-lg leading-relaxed mb-6">
-            Research from <strong>MIT Sloan</strong> and <strong>Harvard Business Review</strong> confirms that the "Data Foundation" is the single biggest predictor of AI success. 
-        </p>
-        <p class="text-lg leading-relaxed">
-            This project implements an automated <strong>Data Integrity</strong> layer. By auditing semantic logic via Python and SQL, we ensure that the model consumes only "High-Fidelity" data.
-        </p>
-    </section>
+<!-- ============================================================
+     MAIN NAVIGATION
+     ============================================================ -->
+<nav id="main-nav">
+  <div id="nav-brand">
+    <span class="nav-logo">S&amp;S</span>
+    <span class="nav-title">SCRUB &amp; SCALE</span>
+  </div>
 
-    <section class="max-w-4xl mx-auto py-20 px-6 bg-zinc-900/30 rounded-xl mb-20">
-        <h2 class="text-2xl font-semibold text-white mb-10">The 5 Pillars of Scaling AI</h2>
-        <div class="space-y-8">
-            <div class="border-l-4 border-emerald-500 pl-6">
-                <h3 class="text-white font-bold text-xl">1. Data Integrity</h3>
-                <p>Automated checks to ensure data is accurate before it hits the AI model.</p>
-            </div>
-            <div class="border-l-4 border-emerald-500 pl-6">
-                <h3 class="text-white font-bold text-xl">2. Culture Change</h3>
-                <p>Moving from "gut feeling" to data-driven trust through clear reporting.</p>
-            </div>
-            <div class="border-l-4 border-emerald-500 pl-6">
-                <h3 class="text-white font-bold text-xl">3. Operational Integration</h3>
-                <p>Using PowerShell hooks to automate data audits in real-time.</p>
-            </div>
-        </div>
-    </section>
-
-<section class="max-w-4xl mx-auto py-20 px-6 border-t border-zinc-900">
-    <h2 class="text-2xl font-semibold text-white mb-6">Visible Demonstration: The "Gatekeeper" at Work</h2>
-    <p class="mb-10 text-zinc-400">Most databases have "hidden" errors that trip up AI. My auditor finds them automatically.</p>
-
-    <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-red-950/20 border border-red-900/50 p-6 rounded-xl">
-            <h3 class="text-red-500 font-bold mb-4 uppercase text-xs tracking-widest">🚨 Messy Raw Data</h3>
-            <ul class="space-y-3 text-sm">
-                <li class="flex justify-between border-b border-red-900/30 pb-2">
-                    <span>Order: Jan 10</span> <span class="text-red-400 font-mono italic">Ship: Jan 05 (!)</span>
-                </li>
-                <li class="flex justify-between border-b border-red-900/30 pb-2">
-                    <span>Customer ID</span> <span class="text-red-400 font-mono italic">[NULL / MISSING]</span>
-                </li>
-                <li class="flex justify-between">
-                    <span>Inventory Count</span> <span class="text-red-400 font-mono italic">-42 Units</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="bg-emerald-950/20 border border-emerald-900/50 p-6 rounded-xl">
-            <h3 class="text-emerald-500 font-bold mb-4 uppercase text-xs tracking-widest">✅ AI-Ready Data</h3>
-            <ul class="space-y-3 text-sm text-zinc-300">
-                <li class="flex justify-between border-b border-emerald-900/30 pb-2">
-                    <span>Order: Jan 10</span> <span class="text-emerald-400 font-mono">Ship: Jan 12</span>
-                </li>
-                <li class="flex justify-between border-b border-emerald-900/30 pb-2">
-                    <span>Customer ID</span> <span class="text-emerald-400 font-mono">CUST-10294</span>
-                </li>
-                <li class="flex justify-between">
-                    <span>Inventory Count</span> <span class="text-emerald-400 font-mono">0 Units (Corrected)</span>
-                </li>
-            </ul>
-        </div>
+  <div id="step-nodes">
+    <div class="step-node-wrap">
+      <div class="step-node" id="step-node-1">
+        <span class="node-num">01</span>
+        <span class="node-label">RAW DATA</span>
+      </div>
     </div>
-</section>
-    
-    <footer class="max-w-4xl mx-auto py-20 px-6 border-t border-zinc-900 text-center">
-        <a href="https://github.com/rwhale/scrub-and-scale" class="text-emerald-500 hover:underline">View Source on GitHub</a>
-    </footer>
+    <div class="step-connector"></div>
+    <div class="step-node-wrap">
+      <div class="step-node" id="step-node-2">
+        <span class="node-num">02</span>
+        <span class="node-label">QUERY</span>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-node-wrap">
+      <div class="step-node" id="step-node-3">
+        <span class="node-num">03</span>
+        <span class="node-label">PROBLEMS</span>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-node-wrap">
+      <div class="step-node" id="step-node-4">
+        <span class="node-num">04</span>
+        <span class="node-label">AUDITOR</span>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-node-wrap">
+      <div class="step-node" id="step-node-5">
+        <span class="node-num">05</span>
+        <span class="node-label">THE FIX</span>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-node-wrap">
+      <div class="step-node" id="step-node-6">
+        <span class="node-num">06</span>
+        <span class="node-label">MONITOR</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="step-mobile-indicator" id="step-mobile-indicator">START</span>
+
+  <div id="nav-progress-bar-wrap">
+    <div id="nav-progress-bar"></div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MAIN APP CONTAINER
+     ============================================================ -->
+<div id="app">
+
+  <!-- ==========================================================
+       SECTION 0 — LANDING
+       ========================================================== -->
+  <section class="section active" id="landing">
+    <div class="landing-title">SCRUB &amp; <span>SCALE</span></div>
+    <div class="landing-subtitle">WHY CLEAN DATA IS THE FOUNDATION OF ENTERPRISE AI</div>
+    <div class="landing-tagline">A live demonstration for program leadership &mdash; Aerospace &amp; Defense</div>
+
+    <p class="landing-statement">
+      Your organization is planning to implement AI. The budget is approved. The teams are excited.
+      But there is a problem hiding in your data &mdash; and if you don&rsquo;t address it first,
+      your AI investment will underperform before it starts. This demonstration walks through exactly
+      what that problem looks like, how to find it, and how to fix it.
+      <strong>No coding experience required.</strong>
+    </p>
+
+    <div class="mission-brief">
+      <div class="brief-row"><span class="label">DATA SOURCE</span><span class="value">Deltek Open Plan (OPP) &mdash; Integrated Master Schedule Export</span></div>
+      <div class="brief-row"><span class="label">INDUSTRY</span><span class="value">Aerospace &amp; Defense &mdash; Program Management / EVM</span></div>
+      <div class="brief-row"><span class="label">PROGRAM TYPE</span><span class="value">Major Defense Acquisition Program (MDAP)</span></div>
+      <div class="brief-row"><span class="label">AUDIENCE</span><span class="value">Program Leadership, Finance, Controls, and Strategy</span></div>
+      <div class="brief-row"><span class="label">OBJECTIVE</span><span class="value">Demonstrate why data quality is the prerequisite for enterprise AI</span></div>
+    </div>
+
+    <div class="step-preview-chips">
+      <span class="preview-chip" id="chip-1">01 &mdash; RAW DATA</span>
+      <span class="preview-chip" id="chip-2">02 &mdash; QUERY</span>
+      <span class="preview-chip" id="chip-3">03 &mdash; PROBLEMS</span>
+      <span class="preview-chip" id="chip-4">04 &mdash; AUDITOR</span>
+      <span class="preview-chip" id="chip-5">05 &mdash; THE FIX</span>
+      <span class="preview-chip" id="chip-6">06 &mdash; MONITOR</span>
+    </div>
+
+    <button class="btn-start" id="start-btn">START DEMONSTRATION</button>
+  </section>
+
+  <!-- ==========================================================
+       STEP 1 — THE RAW DATA
+       ========================================================== -->
+  <section class="section" id="step-1">
+    <div class="section-eyebrow">01 / THE RAW DATA</div>
+    <h1 class="section-title">Your Integrated Master Schedule &mdash;<br>Raw from Deltek Open Plan</h1>
+
+    <div class="explain-panel">
+      <p>
+        <strong>Deltek Open Plan (OPP)</strong> is the scheduling engine behind some of the largest defense programs in the world.
+        It manages Integrated Master Schedules &mdash; the detailed, task-by-task roadmaps that define how a program is planned,
+        resourced, and executed. It tracks thousands of individual activities across the Work Breakdown Structure (WBS),
+        assigns resources and budgets, and records planned versus actual performance over time.
+      </p>
+      <p>
+        The three numbers at the heart of every OPP export are the foundation of Earned Value Management.
+        <strong>BCWS</strong> (Budgeted Cost of Work Scheduled) is what you planned to spend by this point in time &mdash; your budget baseline.
+        <strong>BCWP</strong> (Budgeted Cost of Work Performed) is what you actually earned by completing work &mdash; the value you&rsquo;ve produced.
+        <strong>ACWP</strong> (Actual Cost of Work Performed) is what you actually spent to produce that work.
+        Divide BCWP by BCWS and you get the <strong>Schedule Performance Index (SPI)</strong>.
+        Divide BCWP by ACWP and you get the <strong>Cost Performance Index (CPI)</strong>.
+        These are the vital signs of a program&rsquo;s health.
+      </p>
+      <p>
+        This data is the primary input for any AI system that would predict schedule delays, forecast cost overruns,
+        detect anomalies, or recommend program adjustments. <strong>The quality of this data directly determines the quality
+        of any AI output built on top of it.</strong>
+      </p>
+      <p>
+        What you&rsquo;re about to see is a realistic representation of what OPP export data looks like in practice &mdash;
+        not after it has been cleaned, validated, or processed. This is the raw feed.
+        <strong>Look closely.</strong>
+      </p>
+    </div>
+
+    <!-- Table populated by JavaScript -->
+    <div id="step1-table-container"></div>
+
+    <p class="closing-italic">
+      This is your data. Imported directly from Open Plan. Exactly as the system exported it.
+      Click NEXT to ask it a question.
+    </p>
+  </section>
+
+  <!-- ==========================================================
+       STEP 2 — THE SQL QUERY
+       ========================================================== -->
+  <section class="section" id="step-2">
+    <div class="section-eyebrow">02 / THE QUERY</div>
+    <h1 class="section-title">Asking the Data a Question &mdash;<br>An Intermediate SQL Analysis</h1>
+
+    <div class="explain-panel">
+      <p>
+        <strong>SQL &mdash; Structured Query Language &mdash;</strong> is how we ask questions of a database.
+        Think of it as a very precise, very literal assistant. You write out exactly what you want to find,
+        what conditions it must meet, and how you want it organized. The database returns only what matches.
+        Every modern reporting tool, dashboard, and AI system uses SQL (or something very similar) at its foundation.
+      </p>
+      <p>
+        The question we&rsquo;re asking is one every program manager cares about: <strong>which active tasks are
+        simultaneously behind schedule AND over budget?</strong> In Earned Value terms, we want tasks where both the
+        Schedule Performance Index (SPI) and Cost Performance Index (CPI) fall below 1.0.
+        These are the tasks that need immediate attention &mdash; and they&rsquo;re the first thing a predictive AI model would focus on.
+      </p>
+      <p>
+        This query is well-written. The logic is sound. But the data it&rsquo;s running against is not clean.
+        <strong>Watch what happens.</strong>
+      </p>
+    </div>
+
+    <!-- SQL Code Panel -->
+    <div class="code-panel-wrap">
+      <div class="code-panel-header">
+        <span class="code-panel-title">PROGRAM HEALTH QUERY &mdash; SENTINEL-7 IMS</span>
+        <span class="code-panel-lang">SQL</span>
+      </div>
+      <pre class="code-panel" id="sql-code-panel"></pre>
+    </div>
+
+    <div style="text-align:center;margin:1.5rem 0;">
+      <button class="btn-action btn-cyan" id="run-query-btn">&#x25B6; RUN QUERY</button>
+    </div>
+
+    <!-- Query Results (hidden until query runs) -->
+    <div id="query-results-section" style="display:none">
+      <div class="section-eyebrow" style="margin-top:2rem">QUERY RESULTS &mdash; 10 ROWS RETURNED</div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>TASK_ID</th>
+              <th>TASK_NAME</th>
+              <th>SPI</th>
+              <th>CPI</th>
+              <th>RISK_FLAG</th>
+              <th>RESOURCE_NAME</th>
+              <th>PCT_COMPLETE</th>
+              <th>BASELINE_FINISH</th>
+              <th>ACTUAL_FINISH</th>
+            </tr>
+          </thead>
+          <tbody id="query-results-body"></tbody>
+        </table>
+      </div>
+
+      <div class="query-callout" id="query-callout" style="display:none">
+        <strong>The query returned results. But 4 of those results contain misleading, incomplete, or duplicated data.</strong>
+        If an AI model trained on this output, it would learn the wrong patterns.
+        Click NEXT to examine each problem in detail.
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       STEP 3 — THE BAD DATA AUDIT
+       ========================================================== -->
+  <section class="section" id="step-3">
+    <div class="section-eyebrow">03 / THE PROBLEMS</div>
+    <h1 class="section-title">What&rsquo;s Actually Wrong &mdash;<br>And Why It Matters for AI</h1>
+
+    <div class="explain-panel">
+      <p>
+        <strong>Artificial intelligence doesn&rsquo;t think. It learns patterns from examples.</strong>
+        If those examples contain errors, inconsistencies, and gaps, the AI learns those errors as valid patterns.
+        This is the single most underestimated risk in enterprise AI deployment &mdash; not that the AI will go rogue,
+        but that it will quietly, confidently be wrong because the data it learned from was quietly, confidently wrong.
+      </p>
+      <p>
+        Below is your Integrated Master Schedule again. This time, <strong>every data quality issue has been identified
+        and annotated.</strong> Click any highlighted cell or row to see exactly what the problem is, why it happened,
+        and what it would do to an AI system built on this data.
+        Watch your Data Health Score in the upper right as each issue is revealed.
+      </p>
+    </div>
+
+    <div id="step3-layout">
+      <!-- Left: annotated table -->
+      <div>
+        <div id="step3-table-container"></div>
+
+        <div style="margin-top:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center">
+          <button class="btn-action btn-red-ghost" id="reveal-all-btn">&#x26A0; REVEAL ALL ISSUES</button>
+          <span style="font-size:0.8rem;color:var(--text-secondary)">
+            Click highlighted cells to inspect individual issues
+          </span>
+        </div>
+
+        <!-- Summary scorecard (appears after reveal all) -->
+        <div id="summary-scorecard-container" style="margin-top:2rem"></div>
+      </div>
+
+      <!-- Right: gauge + cards -->
+      <div id="step3-right">
+        <div id="health-gauge-wrap">
+          <div class="gauge-label-top">DATA HEALTH SCORE</div>
+          <div id="health-gauge">
+            <svg width="140" height="140" viewBox="0 0 120 120">
+              <circle id="gauge-arc-bg" cx="60" cy="60" r="45"/>
+              <circle id="gauge-arc-fg" cx="60" cy="60" r="45"/>
+              <text id="gauge-score-text" x="60" y="54" text-anchor="middle" dominant-baseline="middle">100</text>
+              <text id="gauge-label-text" x="60" y="76" text-anchor="middle" dominant-baseline="middle">STRONG</text>
+            </svg>
+          </div>
+        </div>
+
+        <div id="audit-cards-container"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       STEP 4 — THE AI READINESS AUDITOR
+       ========================================================== -->
+  <section class="section" id="step-4">
+    <div class="section-eyebrow">04 / THE AUDITOR</div>
+    <h1 class="section-title">The AI Readiness Auditor &mdash;<br>Automated Detection at Scale</h1>
+
+    <div class="explain-panel">
+      <p>
+        A Python script is a set of instructions written in a programming language called Python &mdash; one of the most
+        widely used languages in data science and AI. Think of it like a detailed checklist given to a very fast,
+        very literal, very tireless assistant. You define the rules. The script applies them to every single row of data,
+        every single time, in seconds &mdash; without missing anything, without getting tired, and without needing to
+        understand context it wasn&rsquo;t programmed to handle.
+      </p>
+      <p>
+        The <strong>AI Readiness Auditor</strong> below was written specifically for Deltek Open Plan exports.
+        It codifies the 10 data quality rules we just examined into automated checks.
+        Every function is annotated in plain English so any stakeholder can understand what the script is doing and why.
+        This is not a black box &mdash; it is a documented, auditable, repeatable quality gate.
+      </p>
+      <p>
+        In practice, this script would run automatically each time a new OPP export is produced &mdash;
+        as part of a scheduled task, a CI/CD pipeline, or a file-watcher monitoring your exports folder.
+        It produces a structured JSON report that feeds directly into dashboards, alerts, and the AI pipeline gating system.
+      </p>
+    </div>
+
+    <!-- Python Auditor Code Panel -->
+    <div class="code-panel-wrap">
+      <div class="code-panel-header">
+        <span class="code-panel-title">AI READINESS AUDITOR &mdash; v1.0 &mdash; ai_readiness_auditor.py</span>
+        <span class="code-panel-lang">Python</span>
+      </div>
+      <pre class="code-panel" id="python-auditor-panel"></pre>
+    </div>
+
+    <div style="text-align:center;margin:1.5rem 0;">
+      <button class="btn-action btn-cyan" id="run-auditor-btn">&#x25B6; RUN AUDITOR</button>
+    </div>
+
+    <!-- Terminal Output -->
+    <div class="terminal-wrap">
+      <div class="terminal-header">
+        <span class="terminal-dot t-red"></span>
+        <span class="terminal-dot t-yellow"></span>
+        <span class="terminal-dot t-green"></span>
+        <span class="terminal-header-title">TERMINAL &mdash; audit_runner.sh</span>
+      </div>
+      <div class="terminal-body" id="auditor-terminal-body">
+        <div class="terminal-line" style="color:var(--text-secondary);font-style:italic">
+          Click RUN AUDITOR to execute the script against IMS_EXPORT_SENTINEL7.csv
+        </div>
+      </div>
+    </div>
+
+    <!-- JSON Report Panel (appears after run) -->
+    <div class="json-panel" id="audit-json-panel"></div>
+  </section>
+
+  <!-- ==========================================================
+       STEP 5 — DATA CORRECTION
+       ========================================================== -->
+  <section class="section" id="step-5">
+    <div class="section-eyebrow">05 / THE FIX</div>
+    <h1 class="section-title">Scrubbing the Data &mdash;<br>Automated Correction and Human Review</h1>
+
+    <div class="explain-panel">
+      <p>
+        Finding data problems is the first half of the solution. Fixing them is the second.
+        But not all data problems are the same kind of problem &mdash; and this distinction is critical in a defense
+        program environment where data drives contractual reporting, government oversight, and earned value system compliance.
+      </p>
+      <p>
+        The AI Readiness Auditor separates its findings into two queues: <strong>AUTO-CORRECTABLE</strong> issues,
+        where the fix is unambiguous and a computer can safely apply it, and <strong>HUMAN REVIEW REQUIRED</strong>
+        issues, where a decision must be made by a credentialed program controls professional before anything is changed.
+        Automating a decision that requires human judgment &mdash; especially on CPR or IPMR data &mdash; is not a feature.
+        It&rsquo;s a liability.
+      </p>
+    </div>
+
+    <!-- Two-column breakdown -->
+    <div class="two-col-corrections">
+      <div class="correction-col">
+        <span class="correction-col-header col-auto">AUTO-CORRECT</span>
+        <div class="correction-item">
+          <span class="ci-icon text-green">&#x2713;</span>
+          <div><strong>WBS code format</strong> &mdash; Standardize all codes to dot notation.
+            <span style="font-family:var(--font-code);font-size:0.75rem;color:var(--accent-amber)">"1-2-4-1"</span>
+            &rarr;
+            <span style="font-family:var(--font-code);font-size:0.75rem;color:var(--accent-green)">"1.2.4.1"</span>
+          </div>
+        </div>
+        <div class="correction-item">
+          <span class="ci-icon text-green">&#x2713;</span>
+          <div><strong>OBS code typos</strong> &mdash; Fuzzy-match to nearest valid code (&ge;91% confidence only).
+            <span style="font-family:var(--font-code);font-size:0.75rem;color:var(--accent-amber)">"ENG-GCN"</span>
+            &rarr;
+            <span style="font-family:var(--font-code);font-size:0.75rem;color:var(--accent-green)">"ENG-GNC"</span>
+          </div>
+        </div>
+        <div class="correction-item">
+          <span class="ci-icon text-green">&#x2713;</span>
+          <div><strong>Resource name normalization</strong> &mdash; Standardize to "Last, First." format.
+            <span style="font-family:var(--font-code);font-size:0.75rem;color:var(--accent-amber)">"J.Mitchell"</span>
+            and
+            <span style="font-family:var(--font-code);font-size:0.75rem;color:var(--accent-amber)">"john mitchell"</span>
+            &rarr;
+            <span style="font-family:var(--font-code);font-size:0.75rem;color:var(--accent-green)">"Mitchell, J."</span>
+          </div>
+        </div>
+        <div class="correction-item">
+          <span class="ci-icon text-green">&#x2713;</span>
+          <div><strong>Whitespace trimming</strong> &mdash; Remove leading/trailing spaces from all text fields.</div>
+        </div>
+        <div class="correction-item">
+          <span class="ci-icon text-green">&#x2713;</span>
+          <div><strong>Status auto-close</strong> &mdash; Where PCT_COMPLETE = 100 AND ACTUAL_FINISH is populated, set STATUS = &lsquo;Closed&rsquo;.</div>
+        </div>
+      </div>
+
+      <div class="correction-col">
+        <span class="correction-col-header col-review">REQUIRES REVIEW</span>
+        <div class="correction-item">
+          <span class="ci-icon text-amber">&#x2691;</span>
+          <div><strong>Null WBS_CODE</strong> &mdash; Cannot be assumed. Must be assigned by Program Controls from the WBS dictionary.</div>
+        </div>
+        <div class="correction-item">
+          <span class="ci-icon text-amber">&#x2691;</span>
+          <div><strong>Date logic violations</strong> &mdash; Could be a real event or a data entry error. Cannot correct without SME confirmation.</div>
+        </div>
+        <div class="correction-item">
+          <span class="ci-icon text-amber">&#x2691;</span>
+          <div><strong>Duplicate Task IDs</strong> &mdash; Cannot determine the authoritative record without reviewing source schedules.</div>
+        </div>
+        <div class="correction-item">
+          <span class="ci-icon text-amber">&#x2691;</span>
+          <div><strong>Zero ACWP on active tasks</strong> &mdash; May be a legitimate cost deferral, a system integration failure, or an error. Finance must adjudicate.</div>
+        </div>
+        <div class="correction-item">
+          <span class="ci-icon text-amber">&#x2691;</span>
+          <div><strong>Implausible EVM values</strong> &mdash; May indicate a legitimate replan event or a critical error. Requires PCO or BCWS authorization review.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive correction table -->
+    <div class="section-eyebrow" style="margin-bottom:1rem">INTERACTIVE CORRECTION DEMO</div>
+    <div id="step5-table-container"></div>
+
+    <div style="margin:1.25rem 0;display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
+      <button class="btn-action btn-green" id="apply-corrections-btn">&#x2713; APPLY AUTO-CORRECTIONS</button>
+      <button class="btn-action btn-amber" id="send-review-btn" style="display:none">
+        &#x2691; SEND TO HUMAN REVIEW QUEUE
+      </button>
+    </div>
+
+    <!-- Correction log -->
+    <div class="correction-log" id="correction-log"></div>
+
+    <!-- Review queue -->
+    <div class="review-queue" id="review-queue">
+      <div class="review-queue-header">
+        HUMAN REVIEW QUEUE &mdash; SENTINEL-7 IMS &mdash;
+        Generated <span id="hrq-date"></span>
+      </div>
+      <div class="review-queue-body"></div>
+      <div class="review-queue-footer">QUEUE SENT TO: Program Controls Team (Sentinel-7)</div>
+    </div>
+
+    <!-- Post-correction audit result -->
+    <div id="post-correction-audit" style="display:none;margin-top:1.5rem">
+      <div class="terminal-wrap">
+        <div class="terminal-header">
+          <span class="terminal-dot t-red"></span>
+          <span class="terminal-dot t-yellow"></span>
+          <span class="terminal-dot t-green"></span>
+          <span class="terminal-header-title">POST-CORRECTION RE-AUDIT</span>
+        </div>
+        <div class="terminal-body" id="post-correction-terminal"></div>
+      </div>
+
+      <!-- Before / After gauges -->
+      <div class="gauge-compare">
+        <div class="gauge-mini-wrap">
+          <div class="gauge-mini-label">BEFORE CORRECTIONS</div>
+          <canvas id="gauge-before" width="120" height="120"></canvas>
+        </div>
+        <div class="gauge-arrow">
+          <svg width="48" height="24" viewBox="0 0 48 24">
+            <path d="M0 12 H38 M28 4 L48 12 L28 20" stroke="#00e676" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span class="gauge-arrow-label">+36 PTS</span>
+        </div>
+        <div class="gauge-mini-wrap">
+          <div class="gauge-mini-label">AFTER AUTO-CORRECTIONS</div>
+          <canvas id="gauge-after" width="120" height="120"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Python Corrections Code Panel -->
+    <div style="margin-top:2.5rem">
+      <div class="section-eyebrow">CORRECTION MODULE SOURCE CODE</div>
+      <div class="code-panel-wrap" style="margin-top:1rem">
+        <div class="code-panel-header">
+          <span class="code-panel-title">AUTO-CORRECTION MODULE &mdash; corrections.py</span>
+          <span class="code-panel-lang">Python</span>
+        </div>
+        <pre class="code-panel" id="python-corrections-panel"></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       STEP 6 — THE MONITOR
+       ========================================================== -->
+  <section class="section" id="step-6">
+    <div class="section-eyebrow">06 / THE MONITOR</div>
+    <h1 class="section-title">Continuous Monitoring &mdash;<br>Keeping Your Data AI-Ready Over Time</h1>
+
+    <div class="explain-panel">
+      <p>
+        <strong>Data cleaning is not a one-time project. It is an ongoing operational discipline.</strong>
+        In a live defense program, your Open Plan database is updated continuously &mdash; schedulers log progress,
+        finance systems post actuals, subcontractors submit status. Every update is an opportunity for new bad data
+        to enter the system. Without automated monitoring, data quality degrades silently, and the AI systems built
+        on top of it degrade with it.
+      </p>
+      <p>
+        The monitoring script below is a watchdog. It runs continuously in the background, watching a designated
+        folder where Open Plan exports are dropped. The moment a new export file appears, it automatically triggers
+        the AI Readiness Auditor, applies auto-corrections, queues human review items, sends alerts to the
+        program controls team, and forwards clean data to the AI pipeline &mdash; all within seconds of the file landing.
+      </p>
+      <p>
+        This is what a mature AI data pipeline looks like: not a one-time integration, but a
+        <strong>self-monitoring, self-correcting quality gate</strong> that enforces data standards continuously,
+        creates an auditable record of every data event, and ensures that the only data an AI model ever sees
+        is data that has passed inspection.
+      </p>
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div class="arch-diagram">
+      <div style="font-family:var(--font-display);font-size:0.55rem;letter-spacing:0.15em;color:var(--accent-cyan);margin-bottom:1.25rem">
+        AUTOMATED DATA QUALITY PIPELINE ARCHITECTURE
+      </div>
+      <div style="overflow-x:auto">
+        <div style="min-width:880px;padding:1rem 0">
+          <!-- Row 1: Main flow -->
+          <div style="display:flex;align-items:center;gap:0;margin-bottom:1.5rem">
+            <div class="arch-node node-cyan">DELTEK<br>OPEN PLAN</div>
+            <div class="arch-connector"><div class="arch-connector-line"></div></div>
+            <div class="arch-node">SCHEDULED<br>EXPORT (.csv)</div>
+            <div class="arch-connector"><div class="arch-connector-line"></div></div>
+            <div class="arch-node node-cyan">FILE WATCHER<br>watchdog</div>
+            <div class="arch-connector"><div class="arch-connector-line"></div></div>
+            <div class="arch-node node-cyan">AI READINESS<br>AUDITOR</div>
+            <div class="arch-connector"><div class="arch-connector-line"></div></div>
+            <div class="arch-node" style="border-color:rgba(255,255,255,0.3)">DECISION<br>CLEAN or DIRTY?</div>
+          </div>
+          <!-- Row 2: Branch -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding-left:420px">
+            <div>
+              <div style="font-family:var(--font-display);font-size:0.5rem;color:var(--accent-green);letter-spacing:0.1em;margin-bottom:0.5rem">
+                SCORE &ge;70 &mdash; CLEAN
+              </div>
+              <div style="display:flex;align-items:center;gap:0">
+                <div class="arch-connector" style="width:20px"><div class="arch-connector-line" style="background:repeating-linear-gradient(90deg,var(--accent-green) 0px,var(--accent-green) 6px,transparent 6px,transparent 12px)"></div></div>
+                <div class="arch-node node-green">AI DATA PIPELINE</div>
+                <div class="arch-connector" style="width:20px"><div class="arch-connector-line" style="background:repeating-linear-gradient(90deg,var(--accent-green) 0px,var(--accent-green) 6px,transparent 6px,transparent 12px)"></div></div>
+                <div class="arch-node node-green" style="font-size:0.48rem">FORECASTING MODELS<br>DASHBOARDS</div>
+              </div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-display);font-size:0.5rem;color:var(--accent-red);letter-spacing:0.1em;margin-bottom:0.5rem">
+                SCORE &lt;70 &mdash; DIRTY
+              </div>
+              <div style="display:flex;align-items:center;gap:0;flex-wrap:wrap;row-gap:0.5rem">
+                <div class="arch-connector" style="width:20px"><div class="arch-connector-line" style="background:repeating-linear-gradient(90deg,var(--accent-amber) 0px,var(--accent-amber) 6px,transparent 6px,transparent 12px)"></div></div>
+                <div class="arch-node node-amber">AUTO-CORRECT</div>
+                <div class="arch-connector" style="width:20px"><div class="arch-connector-line" style="background:repeating-linear-gradient(90deg,var(--accent-amber) 0px,var(--accent-amber) 6px,transparent 6px,transparent 12px)"></div></div>
+                <div class="arch-node node-amber">REVIEW QUEUE</div>
+                <div class="arch-connector" style="width:20px"><div class="arch-connector-line" style="background:repeating-linear-gradient(90deg,var(--accent-red) 0px,var(--accent-red) 6px,transparent 6px,transparent 12px)"></div></div>
+                <div class="arch-node node-red" style="font-size:0.48rem">&#x2691; ALERT<br>PROG CONTROLS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Python Monitor Code Panel -->
+    <div class="code-panel-wrap">
+      <div class="code-panel-header">
+        <span class="code-panel-title">AI READINESS MONITOR &mdash; v1.0 &mdash; ai_readiness_monitor.py</span>
+        <span class="code-panel-lang">Python</span>
+      </div>
+      <pre class="code-panel" id="python-monitor-panel"></pre>
+    </div>
+
+    <!-- Monitor Console -->
+    <div class="section-eyebrow" style="margin-top:2rem">LIVE MONITOR &mdash; SENTINEL-7 PROGRAM</div>
+    <div class="terminal-wrap" style="margin-top:0.75rem">
+      <div class="terminal-header">
+        <span class="terminal-dot t-red"></span>
+        <span class="terminal-dot t-yellow"></span>
+        <span class="terminal-dot t-green"></span>
+        <span class="terminal-header-title">MONITOR CONSOLE &mdash; /exports/opp/incoming/</span>
+      </div>
+      <div class="terminal-body" id="monitor-terminal-body">
+        <div class="terminal-line" style="color:var(--text-secondary);font-style:italic">
+          Click ACTIVATE MONITOR to start the simulation
+        </div>
+      </div>
+    </div>
+
+    <div style="margin:1.25rem 0;display:flex;gap:1rem;flex-wrap:wrap">
+      <button class="btn-action btn-cyan" id="activate-monitor-btn">&#x25B6; ACTIVATE MONITOR</button>
+      <button class="btn-action btn-amber" id="simulate-bad-file-btn" style="display:none">
+        &#x26A0; SIMULATE BAD FILE ARRIVAL
+      </button>
+    </div>
+
+    <!-- Audit Trend Chart -->
+    <div id="audit-chart-wrap">
+      <div class="chart-title">12-WEEK DATA HEALTH SCORE TREND &mdash; SENTINEL-7 PROGRAM</div>
+      <canvas id="audit-trend-chart" height="80"></canvas>
+      <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.75rem">
+        Annotations: Wk 5 &mdash; Subcontractor data feed integrated &nbsp;|&nbsp;
+        Wk 9 &mdash; Emergency replan event &nbsp;|&nbsp;
+        Wk 11 &mdash; Auto-correction pipeline deployed
+      </div>
+    </div>
+
+    <!-- Why This Matters At Scale -->
+    <div class="scale-callout">
+      <div style="font-family:var(--font-display);font-size:0.55rem;letter-spacing:0.15em;color:var(--accent-cyan);margin-bottom:0.75rem">
+        WHY THIS MATTERS AT SCALE
+      </div>
+      <ul>
+        <li>A defense program with <strong>5,000 IMS tasks and 200 weekly updates</strong> generates approximately
+          <strong>10,400 data change events per year.</strong></li>
+        <li>Manual data quality review at current staffing levels would require an estimated
+          <strong>800&ndash;1,200 analyst hours per year &mdash; per program.</strong></li>
+        <li>Automated monitoring reduces ongoing review effort by an estimated <strong>70&ndash;85%</strong> after
+          initial setup and configuration.</li>
+        <li>More importantly: it creates an <strong>auditable, timestamped, machine-readable quality record</strong> &mdash;
+          essential for DCMA surveillance, DCSA compliance, EVM system certification under
+          <strong>ANSI/EIA-748</strong>, and CPR/IPMR submission confidence.</li>
+        <li>When program leadership asks <em>&ldquo;can we trust this data?&rdquo;</em> &mdash;
+          <strong>the answer becomes a dashboard, not a conversation.</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       CLOSING — THE CASE
+       ========================================================== -->
+  <section class="section" id="closing">
+    <div class="section-eyebrow">THE CASE</div>
+    <h1 class="section-title">The Bottom Line:<br>Data Quality Is Not an IT Problem.<br>It&rsquo;s a <span>Program Problem.</span></h1>
+
+    <p style="font-size:1.05rem;line-height:1.85;color:var(--text-secondary);max-width:680px;margin:0 auto 2.5rem;text-align:center">
+      The demonstrations you&rsquo;ve just seen are not hypothetical. Every data quality failure shown here &mdash;
+      the null WBS codes, the duplicate task IDs, the zero-cost anomalies, the names formatted five different ways &mdash;
+      <strong style="color:var(--text-primary)">exists in production program data today.</strong>
+      On programs that are preparing to implement AI. On programs that are already feeding this data into dashboards
+      that leadership trusts. The question is not whether your data has these problems.
+      The question is whether you know about them.
+    </p>
+
+    <!-- What We Demonstrated -->
+    <div class="section-eyebrow">WHAT WE DEMONSTRATED</div>
+    <div class="demo-card-grid" style="margin-top:1rem">
+      <div class="demo-card">
+        <div class="demo-card-num">01</div>
+        <div class="demo-card-title">THE RAW DATA</div>
+        <div class="demo-card-desc">We looked at a real-world Deltek Open Plan IMS export and saw what program data actually looks like before any quality controls are applied.</div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-card-num">02</div>
+        <div class="demo-card-title">THE SQL QUERY</div>
+        <div class="demo-card-desc">We ran a standard EVM performance query and watched it return results that were silently wrong, incomplete, and misleading &mdash; not because the query was bad, but because the data was.</div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-card-num">03</div>
+        <div class="demo-card-title">THE PROBLEMS</div>
+        <div class="demo-card-desc">We identified 10 distinct categories of data quality failure, each with a direct, specific consequence for any AI system built on top of that data.</div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-card-num">04</div>
+        <div class="demo-card-title">THE AUDITOR</div>
+        <div class="demo-card-desc">We showed how a Python script can automatically detect every one of those 10 failure categories across an entire dataset in seconds &mdash; with full documentation and an auditable score.</div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-card-num">05</div>
+        <div class="demo-card-title">THE FIX</div>
+        <div class="demo-card-desc">We demonstrated automated correction for unambiguous issues and a disciplined human-review workflow for issues that require program controls judgment.</div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-card-num">06</div>
+        <div class="demo-card-title">THE MONITOR</div>
+        <div class="demo-card-desc">We deployed a continuous watchdog that enforces data quality standards automatically with every new export, creating a persistent, defensible quality record.</div>
+      </div>
+    </div>
+
+    <!-- The Enterprise Implication -->
+    <div class="closing-prose">
+      For Aerospace and Defense programs operating under DCMA surveillance, every data quality failure is a potential finding.
+      For programs under ANSI/EIA-748 EVM compliance requirements, data integrity is not optional &mdash; it is contractually mandated.
+      And for programs pursuing AI-enabled forecasting, anomaly detection, or decision support,
+      <strong>data quality is not a prerequisite that can be deferred &mdash; it is the foundation on which the entire investment rests.</strong>
+      A semantic data model &mdash; a formally defined, enforced set of rules about what your data means, how it must be structured,
+      and what values are valid &mdash; is the infrastructure that makes AI pay off.
+    </div>
+
+    <!-- Recommended Path Forward -->
+    <div class="section-eyebrow">RECOMMENDED PATH FORWARD</div>
+    <div class="phase-cards" style="margin-top:1rem">
+      <div class="phase-card">
+        <div class="phase-label">PHASE 1</div>
+        <div class="phase-title">BASELINE</div>
+        <div class="phase-desc">Conduct a full AI Readiness Audit of your current Open Plan environment. Establish your baseline Data Health Score. Identify your highest-severity issues.</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label">PHASE 2</div>
+        <div class="phase-title">DEFINE</div>
+        <div class="phase-desc">Define and document your program&rsquo;s semantic data model: a data dictionary, field-level validation rules, OBS/WBS reference tables, and naming conventions. Enforce these rules at the source system level.</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label">PHASE 3</div>
+        <div class="phase-title">AUTOMATE</div>
+        <div class="phase-desc">Deploy the AI Readiness Auditor as a scheduled or event-triggered task in your environment. Integrate it with your export workflow. Establish alerting to the program controls team.</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label">PHASE 4</div>
+        <div class="phase-title">ENABLE</div>
+        <div class="phase-desc">With a trusted, validated, monitored data pipeline in place, enable AI-powered forecasting, anomaly detection, and decision support &mdash; built on a foundation that can withstand scrutiny.</div>
+      </div>
+    </div>
+
+    <!-- Questions for your team -->
+    <div class="questions-card">
+      <div class="questions-title">QUESTIONS FOR YOUR PROGRAM CONTROLS TEAM</div>
+      <ol class="questions-list">
+        <li><em>&ldquo;If we ran an AI readiness audit on our current Open Plan export today, what score would we get? Does anyone know?&rdquo;</em></li>
+        <li><em>&ldquo;Do we have a documented data dictionary for our IMS? Are WBS and OBS codes validated at entry, or entered as free text?&rdquo;</em></li>
+        <li><em>&ldquo;When our financial system and our scheduling system don&rsquo;t agree, which one wins &mdash; and does the other get corrected automatically or manually?&rdquo;</em></li>
+        <li><em>&ldquo;If we started feeding our IMS data to an AI forecasting model tomorrow, what&rsquo;s the process for ensuring that model isn&rsquo;t trained on stale, corrected, or duplicate data?&rdquo;</em></li>
+        <li><em>&ldquo;What does our audit trail look like for data quality events? Could we produce it for a DCMA review?&rdquo;</em></li>
+      </ol>
+    </div>
+
+    <!-- Built By -->
+    <div class="built-by-card">
+      <div>
+        <div class="built-by-name">Rob Hale</div>
+        <div class="built-by-title">Program Finance Systems Analyst</div>
+      </div>
+      <div>
+        <a href="https://github.com/rwhale/scrub-and-scale" class="built-by-link" target="_blank" rel="noopener">
+          github.com/rwhale/scrub-and-scale
+        </a>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2rem">
+      <button class="btn-action btn-cyan" id="restart-btn">&#x21BA; RESTART DEMONSTRATION</button>
+    </div>
+  </section>
+
+</div><!-- end #app -->
+
+<!-- ============================================================
+     BOTTOM NAVIGATION
+     ============================================================ -->
+<div id="bottom-nav">
+  <button class="btn-ghost" id="prev-btn" style="visibility:hidden">&#8592; PREV</button>
+  <span id="step-label-center"></span>
+  <button class="btn-primary" id="next-btn">START DEMONSTRATION</button>
+</div>
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="data.js"></script>
+<script src="simulator.js"></script>
+<script src="app.js"></script>
+
+<script>
+  // Set the HRQ date dynamically
+  document.addEventListener('DOMContentLoaded', function() {
+    var dateEl = document.getElementById('hrq-date');
+    if (dateEl) {
+      var d = new Date();
+      dateEl.textContent = d.toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
+    }
+  });
+
+  // Post-correction terminal re-wires to correct element
+  var origSendToReview = window.sendToReview;
+</script>
 
 </body>
 </html>
