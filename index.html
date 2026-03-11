@@ -43,6 +43,43 @@
         </div>
     </section>
 
+<section class="max-w-4xl mx-auto py-20 px-6 border-t border-zinc-900">
+    <h2 class="text-2xl font-semibold text-white mb-6">Visible Demonstration: The "Gatekeeper" at Work</h2>
+    <p class="mb-10 text-zinc-400">Most databases have "hidden" errors that trip up AI. My auditor finds them automatically.</p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-red-950/20 border border-red-900/50 p-6 rounded-xl">
+            <h3 class="text-red-500 font-bold mb-4 uppercase text-xs tracking-widest">🚨 Messy Raw Data</h3>
+            <ul class="space-y-3 text-sm">
+                <li class="flex justify-between border-b border-red-900/30 pb-2">
+                    <span>Order: Jan 10</span> <span class="text-red-400 font-mono italic">Ship: Jan 05 (!)</span>
+                </li>
+                <li class="flex justify-between border-b border-red-900/30 pb-2">
+                    <span>Customer ID</span> <span class="text-red-400 font-mono italic">[NULL / MISSING]</span>
+                </li>
+                <li class="flex justify-between">
+                    <span>Inventory Count</span> <span class="text-red-400 font-mono italic">-42 Units</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-emerald-950/20 border border-emerald-900/50 p-6 rounded-xl">
+            <h3 class="text-emerald-500 font-bold mb-4 uppercase text-xs tracking-widest">✅ AI-Ready Data</h3>
+            <ul class="space-y-3 text-sm text-zinc-300">
+                <li class="flex justify-between border-b border-emerald-900/30 pb-2">
+                    <span>Order: Jan 10</span> <span class="text-emerald-400 font-mono">Ship: Jan 12</span>
+                </li>
+                <li class="flex justify-between border-b border-emerald-900/30 pb-2">
+                    <span>Customer ID</span> <span class="text-emerald-400 font-mono">CUST-10294</span>
+                </li>
+                <li class="flex justify-between">
+                    <span>Inventory Count</span> <span class="text-emerald-400 font-mono">0 Units (Corrected)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+    
     <footer class="max-w-4xl mx-auto py-20 px-6 border-t border-zinc-900 text-center">
         <a href="https://github.com/rwhale/scrub-and-scale" class="text-emerald-500 hover:underline">View Source on GitHub</a>
     </footer>
