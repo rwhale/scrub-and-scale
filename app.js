@@ -151,7 +151,7 @@ function onSectionEntry(id) {
       renderAuditTable('step3-table-container');
       renderAuditCards('audit-cards-container');
       renderSummaryScorecard('summary-scorecard-container');
-      updateGauge(100);
+      updateGauge(100); var _lt = document.getElementById('gauge-label-text'); if (_lt) { _lt.textContent = 'UNAUDITED'; }
       break;
 
     case 'step-4':
