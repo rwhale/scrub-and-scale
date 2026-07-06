@@ -1190,7 +1190,7 @@ td.bad-null {
 /* ============================================================
    LANDING PAGE
    ============================================================ */
-#landing {
+#landing.active {
   min-height: calc(100vh - 92px - 64px);
   display: flex;
   flex-direction: column;
